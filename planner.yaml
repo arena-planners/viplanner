@@ -1,0 +1,62 @@
+action_type: waypoints
+rate_hz: 5
+sensor_needs: [image, depth]
+controls_orientation: false
+goal_inputs: [pose]
+signals: []
+
+chunk:
+  execute_s: 0.2
+  lookahead_m: 0.5
+  speed_mps: 1.0
+
+depends:
+  global_plan: true
+
+config:
+  device: cuda
+  camera_offset_x: 0.03
+  camera_offset_y: 0.0
+  fear_threshold: 0.7
+
+observations:
+  aliases: {}
+
+  datasources:
+    robot_pose:
+      type: RobotPoseTFGenerator
+      params: {}
+
+    rgb:
+      type: sensor_msgs/Image
+      params:
+        sensor: image
+
+    depth:
+      type: sensor_msgs/Image
+      params:
+        sensor: depth
+
+    robot_pose_from_tf:
+      type: RobotPoseTFGenerator
+      params: {}
+
+    goal_pose:
+      type: geometry_msgs/PoseStamped
+      params:
+        topic: goal_pose
+
+    global_plan:
+      type: nav_msgs/Path
+      params:
+        topic: plan
+
+    costmap:
+      type: nav_msgs/OccupancyGrid
+      params:
+        topic: global_costmap/costmap
+
+    subgoal:
+      type: SubgoalGenerator
+      params:
+        lookahead: 6.0

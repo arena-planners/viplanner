@@ -1,0 +1,24 @@
+files:
+  - repo: arena-rosnav/viplanner
+    filename: model.pt
+    dest: model/model.pt
+    sha256: 2fd5219cfb160e5035d43319632b3d975637a0e770c4d455a26d3124a15ca87b
+  - repo: arena-rosnav/viplanner
+    filename: model.yaml
+    dest: model/model.yaml
+    sha256: 139f7c147c6c6d56b9644c3a505274cccc22f2f7bb5a9eeb29df98e00bdfd320
+  - repo: facebook/mask2former-swin-tiny-coco-panoptic
+    filename: config.json
+    revision: df6b1142ff50c3276559d9d78f35f6a579c75a77
+    dest: model/mask2former-swin-tiny-coco-panoptic/config.json
+    sha256: c638e5e4aeada33f37287509785306277cb6b60998cdd9dd13e9df7f0aa90055
+  - repo: facebook/mask2former-swin-tiny-coco-panoptic
+    filename: preprocessor_config.json
+    revision: df6b1142ff50c3276559d9d78f35f6a579c75a77
+    dest: model/mask2former-swin-tiny-coco-panoptic/preprocessor_config.json
+    sha256: c25764d27c09d4cd2dcb0100f54221c00c7169446425cc70b2b40481157c3e5c
+  - repo: facebook/mask2former-swin-tiny-coco-panoptic
+    filename: model.safetensors
+    revision: df6b1142ff50c3276559d9d78f35f6a579c75a77
+    dest: model/mask2former-swin-tiny-coco-panoptic/model.safetensors
+    sha256: 8e154c4f946f4fad9aa511a7d706c89c4254cc6eee28fd932e52c32394c5a29f
